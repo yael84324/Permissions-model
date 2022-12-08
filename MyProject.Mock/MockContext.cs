@@ -1,6 +1,6 @@
 ﻿using MyProject.Repositories.Entities;
+using MyProject.Repositories.Interfaces;
 using System.Xml.Linq;
-using tray.first.Interface;
 
 namespace MyProject.Mock
 {

@@ -60,3 +60,7 @@ T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\obj\Debug\n
 T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\obj\Debug\net6.0\MyProject.Web_API.pdb
 T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\obj\Debug\net6.0\MyProject.Web_API.genruntimeconfig.cache
 T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\obj\Debug\net6.0\ref\MyProject.Web_API.dll
+T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\bin\Debug\net6.0\MyProject.Common.dll
+T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\bin\Debug\net6.0\MyProject.Services.dll
+T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\bin\Debug\net6.0\MyProject.Common.pdb
+T:\C#\Yael Katzanellenbogen\מעודכן\MyProject\MyProject.Web_APi\bin\Debug\net6.0\MyProject.Services.pdb

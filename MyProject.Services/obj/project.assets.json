@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "MyProject.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyProject.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyProject.Common.dll": {}
+        }
+      },
+      "MyProject.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyProject.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyProject.Repositories.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MyProject.Common/1.0.0": {
+      "type": "project",
+      "path": "../MyProject.Common/MyProject.Common.csproj",
+      "msbuildProject": "../MyProject.Common/MyProject.Common.csproj"
+    },
+    "MyProject.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../MyProject.Repositories/MyProject.Repositories.csproj",
+      "msbuildProject": "../MyProject.Repositories/MyProject.Repositories.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "MyProject.Common >= 1.0.0",
+      "MyProject.Repositories >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\student\\.nuget\\packages\\": {},
@@ -38,7 +73,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Common\\MyProject.Common.csproj": {
+              "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Common\\MyProject.Common.csproj"
+            },
+            "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Repositories\\MyProject.Repositories.csproj": {
+              "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Repositories\\MyProject.Repositories.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

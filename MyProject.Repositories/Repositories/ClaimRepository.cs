@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using tray.first.Interface;
+
 
 namespace MyProject.Repositories.Repositories
 {
@@ -17,18 +17,19 @@ namespace MyProject.Repositories.Repositories
         {
             _context = context;
         }
-        public Claim Add(int id, int roleId, int prermissionId, EPolicy policy)
+        public async Task<Claim> AddAsync(int id, int roleId, int prermissionId, EPolicy policy)
         {
             _context.Claims.Add(new Claim() { Id=id,RoleId=roleId,PermissionId=prermissionId,Policy=policy});
+            await _context.SaveChangesAsync();
             return GetById(id);
             
         }
 
-        public Claim Delete(int id)
+        public async Task DeleteAsync(int id)
         {
            Claim claim=GetById(id);
             _context.Claims.Remove(claim);
-            return claim;
+            await _context.SaveChangesAsync();
         }
 
         public List<Claim> GetAll()
@@ -41,9 +42,10 @@ namespace MyProject.Repositories.Repositories
             return _context.Claims.First(x => x.Id==id);
         }
 
-        public Claim Update(Claim claim)
+        public async Task<Claim> UpdateAsync(Claim claim)
         {
             _context.Claims[_context.Claims.IndexOf(_context.Claims.First(x => x.Id == claim.Id))] = claim;
+            await _context.SaveChangesAsync();
             return claim;
         }
     }

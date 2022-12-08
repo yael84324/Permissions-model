@@ -73,6 +73,16 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "MyProject.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyProject.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyProject.Common.dll": {}
+        }
+      },
       "MyProject.Mock/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -94,6 +104,20 @@
         },
         "runtime": {
           "bin/placeholder/MyProject.Repositories.dll": {}
+        }
+      },
+      "MyProject.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MyProject.Common": "1.0.0",
+          "MyProject.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyProject.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyProject.Services.dll": {}
         }
       }
     }
@@ -428,6 +452,11 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "MyProject.Common/1.0.0": {
+      "type": "project",
+      "path": "../MyProject.Common/MyProject.Common.csproj",
+      "msbuildProject": "../MyProject.Common/MyProject.Common.csproj"
+    },
     "MyProject.Mock/1.0.0": {
       "type": "project",
       "path": "../MyProject.Mock/MyProject.Mock.csproj",
@@ -437,12 +466,19 @@
       "type": "project",
       "path": "../MyProject.Repositories/MyProject.Repositories.csproj",
       "msbuildProject": "../MyProject.Repositories/MyProject.Repositories.csproj"
+    },
+    "MyProject.Services/1.0.0": {
+      "type": "project",
+      "path": "../MyProject.Services/MyProject.Services.csproj",
+      "msbuildProject": "../MyProject.Services/MyProject.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "MyProject.Common >= 1.0.0",
       "MyProject.Mock >= 1.0.0",
       "MyProject.Repositories >= 1.0.0",
+      "MyProject.Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -478,11 +514,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Common\\MyProject.Common.csproj": {
+              "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Common\\MyProject.Common.csproj"
+            },
             "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Mock\\MyProject.Mock.csproj": {
               "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Mock\\MyProject.Mock.csproj"
             },
             "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Repositories\\MyProject.Repositories.csproj": {
               "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Repositories\\MyProject.Repositories.csproj"
+            },
+            "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Services\\MyProject.Services.csproj": {
+              "projectPath": "T:\\C#\\Yael Katzanellenbogen\\מעודכן\\MyProject\\MyProject.Services\\MyProject.Services.csproj"
             }
           }
         }

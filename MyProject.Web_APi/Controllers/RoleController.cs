@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyProject.Repositories.Entities;
+using MyProject.Common.DTOs;
 using MyProject.Repositories.Interfaces;
+using MyProject.Services.Interfaces;
 
 namespace MyProject.Web_API.Controllers
 {
@@ -8,35 +9,35 @@ namespace MyProject.Web_API.Controllers
     [ApiController]
     public class RoleController : Controller
     {
-        private readonly IRoleRepository _roleRepository; 
-        public RoleController(IRoleRepository roleRepository)
+        private readonly IRoleService _roleService; 
+        public RoleController(IRoleService roleService)
         {
-            _roleRepository = roleRepository;
+            _roleService = roleService;
         }
         [HttpGet]
-        public List<Role> GetAll()
+        public List<RoleDTO> GetAll()
         {
-            return _roleRepository.GetAll();    
+            return _roleService.GetAll();    
         }
         [HttpGet("{id}")]
-        public Role GetById(int id)
+        public RoleDTO GetById(int id)
         {
-            return _roleRepository.GetById(id);
+            return _roleService.GetById(id);
         }
         [HttpPost]
-        public async Task<Role> Add(int id,string name,string description)
+        public async Task<RoleDTO> Add(int id,string name,string description)
         {
-            return await _roleRepository.AddAsync(id,name,description);   
+            return await _roleService.AddAsync(id,name,description);   
         }
         [HttpPut]
-        public async Task<Role> Update(Role role)
+        public async Task<RoleDTO> Update(RoleDTO role)
         {
-            return await _roleRepository.UpdateAsync(role);
+            return await _roleService.UpdateAsync(role);
         }
         [HttpDelete]
         public async Task Delete(int id)
         {
-            await _roleRepository.DeleteAsync(id); 
+            await _roleService.DeleteAsync(id); 
         }
     }
 }

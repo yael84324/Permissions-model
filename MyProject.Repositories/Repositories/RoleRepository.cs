@@ -25,13 +25,12 @@ namespace MyProject.Repositories.Repositories
             return _context.Roles.First(p => p.Id == id);
         }
 
-        public async Task<Role> DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             Role r = _context.Roles.First(p1 => p1.Id == id);
             _context.Roles.Remove(r);
             await _context.SaveChangesAsync();
             //_context.Roles= _context.Roles.Where(p1 => p1.Id != id).ToList();
-            return r;
         }
 
 

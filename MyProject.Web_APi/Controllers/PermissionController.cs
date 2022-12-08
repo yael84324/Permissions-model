@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyProject.Repositories.Entities;
+using MyProject.Common.DTOs;
 using MyProject.Repositories.Interfaces;
+using MyProject.Services.Interfaces;
 
 namespace MyProject.Web_API.Controllers
 {
@@ -8,35 +9,35 @@ namespace MyProject.Web_API.Controllers
     [ApiController]
     public class PermissionController : Controller
     {
-        private readonly IPermissionRepository _permissionRepository;
-        public PermissionController(IPermissionRepository permissionRepository)
+        private readonly IPermissionService _permissionService;
+        public PermissionController(IPermissionService permissionService)
         {
-            _permissionRepository = permissionRepository;
+            _permissionService = permissionService;
         }
         [HttpGet]   
-        public List<Permission> GetAll()
+        public List<PermissionDTO> GetAll()
         {
-            return _permissionRepository.GetAll();
+            return _permissionService.GetAll();
         }
         [HttpGet("{id}")]
-        public Permission GetById(int id)
+        public PermissionDTO GetById(int id)
         {
-            return _permissionRepository.GetById(id);
+            return _permissionService.GetById(id);
         }
         [HttpPost]
-        public Permission Add(int id,string name,string description)
+        public async Task<PermissionDTO> Add(int id,string name,string description)
         {
-            return _permissionRepository.Add(id, name, description);
+            return await _permissionService.AddAsync(id, name, description);
         }
         [HttpPut]
-        public Permission Update(Permission permission)
+        public  async Task<PermissionDTO> Update(PermissionDTO permission)
         {
-            return _permissionRepository.Update(permission);
+            return await _permissionService.UpdateAsync(permission);
         }
         [HttpDelete]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _permissionRepository.Delete(id);   
+            await _permissionService.DeleteAsync(id);   
         }
     }
 }

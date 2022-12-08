@@ -16,18 +16,20 @@ namespace MyProject.Repositories.Repositories
         {
             _context = context;
         }
-        public Permission Add(int id, string name, string description)
+        public async Task<Permission> AddAsync(int id, string name, string description)
         {
 
             _context.Permissions.Add(new Permission { Id = id, Name = name, Description = description });
+            await _context.SaveChangesAsync();
             return _context.Permissions.First(p => p.Id == id);
         }
 
-        public Permission Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             Permission r = _context.Permissions.First(p1 => p1.Id == id);
             _context.Permissions = _context.Permissions.Where(p1 => p1.Id != id).ToList();
-            return r;
+            await  _context.SaveChangesAsync();
+            
         }
 
         public List<Permission> GetAll()
@@ -40,11 +42,12 @@ namespace MyProject.Repositories.Repositories
             return _context.Permissions.First(p => p.Id == id);
         }
 
-        public Permission Update(Permission permission)
+        public async Task<Permission> UpdateAsync(Permission permission)
         {
             Permission r = _context.Permissions.First(p => p.Id == permission.Id);
             r.Name = permission.Name;
             r.Description = permission.Description;
+            await _context.SaveChangesAsync();
             return r;
         }
     }

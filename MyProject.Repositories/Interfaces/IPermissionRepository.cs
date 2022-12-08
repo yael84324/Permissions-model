@@ -14,11 +14,11 @@ namespace MyProject.Repositories.Interfaces
 
         Permission GetById(int id);
 
-        Permission Add(int id, string name, string description);
+        Task<Permission> AddAsync(int id, string name, string description);
 
-        Permission Update(Permission permission);
+        Task<Permission> UpdateAsync(Permission permission);
 
-        Permission Delete(int id);
+        Task DeleteAsync(int id);
 
     }
 }

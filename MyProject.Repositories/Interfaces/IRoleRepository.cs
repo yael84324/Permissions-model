@@ -17,6 +17,6 @@ namespace MyProject.Repositories.Interfaces
 
         Task<Role> UpdateAsync(Role role);
 
-        Task<Role> DeleteAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

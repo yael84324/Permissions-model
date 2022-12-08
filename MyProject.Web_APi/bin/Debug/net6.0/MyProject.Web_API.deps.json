@@ -8,8 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "MyProject.Web_API/1.0.0": {
         "dependencies": {
+          "MyProject.Common": "1.0.0",
           "MyProject.Mock": "1.0.0",
           "MyProject.Repositories": "1.0.0",
+          "MyProject.Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -63,6 +65,11 @@
           }
         }
       },
+      "MyProject.Common/1.0.0": {
+        "runtime": {
+          "MyProject.Common.dll": {}
+        }
+      },
       "MyProject.Mock/1.0.0": {
         "dependencies": {
           "MyProject.Repositories": "1.0.0"
@@ -74,6 +81,15 @@
       "MyProject.Repositories/1.0.0": {
         "runtime": {
           "MyProject.Repositories.dll": {}
+        }
+      },
+      "MyProject.Services/1.0.0": {
+        "dependencies": {
+          "MyProject.Common": "1.0.0",
+          "MyProject.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "MyProject.Services.dll": {}
         }
       }
     }
@@ -126,12 +142,22 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
     },
+    "MyProject.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MyProject.Mock/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "MyProject.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyProject.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

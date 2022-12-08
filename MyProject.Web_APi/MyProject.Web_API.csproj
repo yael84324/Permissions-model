@@ -11,8 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyProject.Common\MyProject.Common.csproj" />
     <ProjectReference Include="..\MyProject.Mock\MyProject.Mock.csproj" />
     <ProjectReference Include="..\MyProject.Repositories\MyProject.Repositories.csproj" />
+    <ProjectReference Include="..\MyProject.Services\MyProject.Services.csproj" />
   </ItemGroup>
 
 </Project>
