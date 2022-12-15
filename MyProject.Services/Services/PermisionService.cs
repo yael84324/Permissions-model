@@ -8,10 +8,10 @@ using MyProject.Repositories.Interfaces;
 using MyProject.Services.Interfaces;
 namespace MyProject.Services.Services
 {
-    public class PermisionService : IPermissionService
+    public class PermissionService : IPermissionService
     {
         private readonly IPermissionRepository _permissionRepository; 
-        public PermisionService(IPermissionService permissionService)
+        public PermissionService(IPermissionService permissionService)
         {
             _permissionRepository = permissionRepository;
         }
